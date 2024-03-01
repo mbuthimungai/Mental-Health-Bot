@@ -5,30 +5,43 @@ This is a bot that tracks mental health cases in social media platforms
 
 ### 1. Use Case Diagram
 
-```mermaid
-%%{init: {'theme': 'default'}}%%
-usecaseDiagram
-    actor "Social Media User"
-    actor "System Administrator"
-    actor "Healthcare Professional"
-    actor "General Public/User"
-    
-    usecase "Collect Data" as CD
-    usecase "Configure Bot" as CB
-    usecase "Generate Insights" as GI
-    usecase "View Insights" as VI
-    usecase "Analyze Data" as AD
-    usecase "Process Data" as PD
-    
-    "Social Media User" --> CD
-    "System Administrator" --> CB
-    GI .> VI : <<include>>
-    AD .> GI : <<include>>
-    PD .> AD : <<include>>
-    CD .> PD : <<include>>
-    "Healthcare Professional" --> VI
-    "General Public/User" --> VI
+```plantuml
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Social Media User"
+actor "System Administrator"
+actor "Healthcare Professional"
+actor "General Public/User"
+
+rectangle System {
+  usecase (Collect Data) as UC1
+  usecase (Configure Bot) as UC2
+  usecase (Generate Insights) as UC3
+  usecase (View Insights) as UC4
+  usecase (Analyze Data) as UC5
+  usecase (Process Data) as UC6
+
+  "Social Media User" --> UC1
+  "System Administrator" --> UC2
+  UC3 .> UC4 : <<include>>
+  UC5 .> UC3 : <<include>>
+  UC6 .> UC5 : <<include>>
+  UC1 .> UC6 : <<include>>
+  "Healthcare Professional" --> UC4
+  "General Public/User" --> UC4
+}
+@enduml
 ```
+
+This diagram represents the following use cases and their interactions:
+- **Collect Data**: Social media users create content that the system collects.
+- **Configure Bot**: The system administrator configures and manages the bot.
+- **Generate Insights**: The bot analyzes the collected data to generate insights.
+- **View Insights**: Healthcare professionals and the general public can view the generated insights.
+- **Analyze Data**: The bot processes the data to analyze it.
+- **Process Data**: The bot preprocesses the collected data for analysis.
 
 ### 2. Class Diagram
 
