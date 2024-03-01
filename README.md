@@ -1,7 +1,7 @@
 # Mental-Health-Bot
 This is a bot that tracks mental health cases in social media platforms
 
-
+```mermaid
 %%{init: {'theme': 'default'}}%%
 usecaseDiagram
   actor SocialMediaUser as "Social Media User"
@@ -18,4 +18,4 @@ usecaseDiagram
     HealthcareProfessional --> (View Insights)
     GeneralPublic --> (View Insights)
   }
-
+```
