@@ -8,20 +8,26 @@ This is a bot that tracks mental health cases in social media platforms
 ```mermaid
 %%{init: {'theme': 'default'}}%%
 usecaseDiagram
-  actor SocialMediaUser as "Social Media User"
-  actor SystemAdmin as "System Administrator"
-  actor HealthcareProfessional as "Healthcare Professional"
-  actor GeneralPublic as "General Public/User"
-  rectangle System {
-    SocialMediaUser --> (Collect Data)
-    SystemAdmin --> (Configure Bot)
-    (Generate Insights) .> (View Insights) : <<include>>
-    (Analyze Data) .> (Generate Insights) : <<include>>
-    (Process Data) .> (Analyze Data) : <<include>>
-    (Collect Data) .> (Process Data) : <<include>>
-    HealthcareProfessional --> (View Insights)
-    GeneralPublic --> (View Insights)
-  }
+    actor "Social Media User"
+    actor "System Administrator"
+    actor "Healthcare Professional"
+    actor "General Public/User"
+    
+    usecase "Collect Data" as CD
+    usecase "Configure Bot" as CB
+    usecase "Generate Insights" as GI
+    usecase "View Insights" as VI
+    usecase "Analyze Data" as AD
+    usecase "Process Data" as PD
+    
+    "Social Media User" --> CD
+    "System Administrator" --> CB
+    GI .> VI : <<include>>
+    AD .> GI : <<include>>
+    PD .> AD : <<include>>
+    CD .> PD : <<include>>
+    "Healthcare Professional" --> VI
+    "General Public/User" --> VI
 ```
 
 ### 2. Class Diagram
