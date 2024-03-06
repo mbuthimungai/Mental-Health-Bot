@@ -55,24 +55,27 @@ This diagram illustrates how different classes interact within the system. For e
 
 ### 3. Sequence Diagram
 
-```mermaid
-%%{init: {'theme': 'default'}}%%
-sequenceDiagram
-  participant SystemAdmin as "System Administrator"
-  participant SocialMediaScraper as "Social Media Scraper"
-  participant DataProcessor
-  participant NLPAnalyzer
-  participant InsightGenerator
-  participant Dashboard
+Creating sequence diagrams will help illustrate how different parts of your mental health insights bot system interact over time to complete specific processes. Let's focus on three key processes to create sequence diagrams for:
 
-  SystemAdmin->>SocialMediaScraper: Initiate Data Collection
-  SocialMediaScraper->>DataProcessor: Feed Raw Data
-  DataProcessor->>NLPAnalyzer: Processed Data
-  NLPAnalyzer->>InsightGenerator: Analysis Results
-  InsightGenerator->>Dashboard: Generate Insights
-  Dashboard->>SystemAdmin: Display Insights
-```
+1. **Collecting Social Media Data**
+2. **Performing NLP Analysis**
+3. **Generating and Viewing Insights**
 
+### 1. Collecting Social Media Data
+
+This diagram will show the process of initiating data collection, fetching data from social media, and storing it for analysis.
+
+![Sequence diagram](https://github.com/mbuthi/Mental-Health-Bot/blob/main/UML-sys%20design/Collecting%20Social%20Media%20Data-sequence-diagram.png)
+### 2. Performing NLP Analysis
+
+This diagram illustrates the sequence of events from fetching stored social media data, performing NLP analysis, and storing the analysis results.
+
+![Sequence diagram](https://github.com/mbuthi/Mental-Health-Bot/blob/main/UML-sys%20design/Generating%20and%20Viewing%20Insights-sequence-diagram.png)
+### 3. Generating and Viewing Insights
+
+This diagram shows how the system generates insight reports from analyzed data and how an end user views these reports.
+
+![Sequence diagram](https://github.com/mbuthi/Mental-Health-Bot/blob/main/UML-sys%20design/Performing%20NLP%20Analysis-sequence%20diagram.png)
 ### 4. Component Diagram
 
 ```mermaid
