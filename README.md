@@ -19,40 +19,39 @@ The use case diagram outline the following:
 
 ### 2. Class Diagram
 
-```mermaid
-%%{init: {'theme': 'default'}}%%
-classDiagram
-  class SocialMediaScraper {
-    +String platform_name
-    +Dictionary api_keys
-    +fetch_posts()
-  }
-  class DataProcessor {
-    -raw_data
-    +clean_data()
-    +tokenize_text()
-  }
-  class NLPAnalyzer {
-    -processed_data
-    +analyze_sentiment()
-    +detect_topics()
-  }
-  class InsightGenerator {
-    -analysis_results
-    +generate_trends()
-    +compile_report()
-  }
-  class Dashboard {
-    -reports
-    -visualizations
-    +display_insights()
-  }
+### Classes and Attributes
 
-  SocialMediaScraper --> DataProcessor : feeds
-  DataProcessor --> NLPAnalyzer : feeds
-  NLPAnalyzer --> InsightGenerator : feeds
-  InsightGenerator --> Dashboard : displays
-```
+1. **SocialMediaPost**
+   - Attributes: postId, content, authorId, timestamp, platform
+
+2. **User**
+   - Attributes: userId, username, email, preferences
+
+3. **NLPAnalysis**
+   - Attributes: analysisId, postId, sentimentScore, topics
+
+4. **InsightReport**
+   - Attributes: reportId, createdDate, summary, trends
+
+5. **DataManager**
+   - Attributes: dataSources, lastUpdate, filterCriteria
+
+6. **MonitoringSettings**
+   - Attributes: settingsId, keywords, frequency, platformPreferences
+
+7. **PrivacyManager**
+   - Attributes: privacySettings, complianceRules
+
+![Class diagram](https://github.com/mbuthi/Mental-Health-Bot/blob/main/UML-sys%20design/class-diagram-mental-health-bot.png)
+
+
+This diagram illustrates how different classes interact within the system. For example:
+- Each `User` can have multiple `SocialMediaPosts`.
+- Each `SocialMediaPost` is associated with one `NLPAnalysis`.
+- `NLPAnalysis` can contribute to multiple `InsightReports`.
+- `DataManager` manages the `SocialMediaPost`s.
+- `MonitoringSettings` configure the `DataManager`.
+- `PrivacyManager` protects `User` data.
 
 ### 3. Sequence Diagram
 
