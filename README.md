@@ -61,22 +61,54 @@ Creating sequence diagrams will help illustrate how different parts of your ment
 2. **Performing NLP Analysis**
 3. **Generating and Viewing Insights**
 
-### 1. Collecting Social Media Data
+#### a. Collecting Social Media Data
 
 This diagram will show the process of initiating data collection, fetching data from social media, and storing it for analysis.
 
 ![Sequence diagram](https://github.com/mbuthi/Mental-Health-Bot/blob/main/UML-sys%20design/Collecting%20Social%20Media%20Data-sequence-diagram.png)
-### 2. Performing NLP Analysis
+#### b. Performing NLP Analysis
 
 This diagram illustrates the sequence of events from fetching stored social media data, performing NLP analysis, and storing the analysis results.
 
 ![Sequence diagram](https://github.com/mbuthi/Mental-Health-Bot/blob/main/UML-sys%20design/Generating%20and%20Viewing%20Insights-sequence-diagram.png)
-### 3. Generating and Viewing Insights
+#### c. Generating and Viewing Insights
 
 This diagram shows how the system generates insight reports from analyzed data and how an end user views these reports.
 
 ![Sequence diagram](https://github.com/mbuthi/Mental-Health-Bot/blob/main/UML-sys%20design/Performing%20NLP%20Analysis-sequence%20diagram.png)
-### 4. Component Diagram
+
+### 4. Activity Diagram for Mental Health Insights Bot
+
+The following activity diagram will depict the main activities involved in processing social media data for mental health insights:
+
+1. **Start**: The initiation of the data processing workflow.
+2. **Collect Social Media Data**: Fetching posts from social media platforms.
+3. **Preprocess Data**: Cleaning and preparing data for analysis.
+4. **Perform NLP Analysis**: Analyzing the data with NLP techniques to extract sentiment and identify topics related to mental health.
+5. **Generate Insights**: Compiling the analysis results into meaningful insights.
+6. **Store Insights**: Saving the insights into a database for future access.
+7. **Display Insights to User**: Presenting the insights through a user interface.
+8. **End**: The completion of the workflow.
+
+![Activity Diagram](https://github.com/mbuthi/Mental-Health-Bot/blob/main/UML-sys%20design/activity-diagram.png)
+#### Explanation of the Activity Diagram
+
+- **Collect Social Media Data**: This is the first step, where the system interacts with various social media APIs to fetch new posts. It's crucial for providing the raw data needed for analysis.
+
+- **Preprocess Data**: Once data is collected, it undergoes preprocessing. This step includes cleaning the data (removing noise, correcting typos), normalization (standardizing text), and tokenization (breaking text into meaningful units).
+
+- **Perform NLP Analysis**: In this stage, the preprocessed data is analyzed using NLP techniques. The system might perform sentiment analysis to gauge the mood of the posts, topic modeling to identify prevalent mental health issues, and other forms of text analysis relevant to the project's objectives.
+
+- **Generate Insights**: Based on the results from the NLP analysis, the system generates insights. This could involve aggregating data points, identifying trends, and highlighting key areas of concern in mental health discussions on social media.
+
+- **Store Insights**: The generated insights are stored in a database. This storage allows for historical data analysis, trend observation over time, and quick access to recent insights.
+
+- **Display Insights to User**: Finally, the insights are presented to the user through a graphical user interface (GUI) or a report format. This step makes the analysis accessible and understandable to end-users, such as mental health professionals, researchers, or interested individuals.
+
+- **End**: Marks the completion of the process.
+
+This activity diagram provides a clear, step-by-step overview of how the mental health insights bot processes data to generate meaningful insights. By visualizing the system's activities, stakeholders can better understand the workflow and identify areas for improvement or expansion.
+### 5. Component Diagram
 
 ```mermaid
 %%{init: {'theme': 'default'}}%%
